@@ -11,6 +11,7 @@ on:
 jobs:
 
   linux:
+    name: Linux
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -19,5 +20,48 @@ jobs:
         uses: actions/setup-go@v1
         with:
           go-version: 1.16
-      - name: Build
-        run: go build
+      - name: Go
+        run: |
+          go build
+          mv center center-linux
+      - name: Upload
+        uses: softprops/action-gh-release@v1
+        with:
+          files: center-linux
+          draft: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  macos:
+    name: MacOS
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup
+        uses: actions/setup-go@v1
+        with:
+          go-version: 1.16
+      - name: Go
+        run: |
+          go build
+          mv center center-macos
+      - name: Upload
+        uses: softprops/action-gh-release@v1
+        with:
+          files: center-macos
+          draft: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    needs: [ linux, macos ]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Publish
+        uses: softprops/action-gh-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
