@@ -62,6 +62,10 @@ echo "This Text is centered" | center
 echo "This Text is centered \n With multiple lines" | center 
 ```
 
+```bash
+neofetch --stdout | center
+```
+
 ## License
 
 [Apache License 2.0](LICENSE)
