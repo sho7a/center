@@ -7,7 +7,7 @@
 
 # center
 
-A cli tool to center text
+> A cli tool to center text
 
 ## Installation
 
@@ -42,7 +42,7 @@ Flags:
   -v, --version   version for center
 ```
 
-## Example
+## Examples
 
 ```bash
 center "This Text is centered"
