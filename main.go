@@ -1,6 +1,6 @@
 package main
 
-import "./cmd"
+import "github.com/PryosCode/center/cmd"
 
 func main() {
 	cmd.Execute()
