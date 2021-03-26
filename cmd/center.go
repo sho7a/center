@@ -31,7 +31,7 @@ func ExecuteCenter(cmd *cobra.Command, args []string) {
 func printCenter(c string) {
 	c = strings.ReplaceAll(c, "\r\n", "\n")
 	c = strings.ReplaceAll(c, "\r", "\n")
-	a := strings.Split(c, `\n`)
+	a := strings.Split(c, "\n")
 	for _, s := range a {
 		s = strings.TrimSpace(s)
 		w, _ := GetTerminalSize()

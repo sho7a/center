@@ -25,7 +25,7 @@ jobs:
           go build
           mv center center-linux
           echo GO_VERSION=$(./center-linux -v | cut -d ' ' -f 3) >> $GITHUB_ENV
-      - name: Upload
+      - name: Release
         uses: softprops/action-gh-release@v1
         with:
           files: center-linux
@@ -48,7 +48,7 @@ jobs:
           go build
           mv center center-macos
           echo GO_VERSION=$(./center-macos -v | cut -d ' ' -f 3) >> $GITHUB_ENV
-      - name: Upload
+      - name: Release
         uses: softprops/action-gh-release@v1
         with:
           files: center-macos

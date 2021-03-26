@@ -1,3 +1,5 @@
+<a href="#installation"><img align="center" width="100%" alt="neofetch" src="assets/neofetch.png"></a>
+
 <p align="center">
     <a href="#installation"><img alt="Version" src="https://img.shields.io/github/v/release/PryosCode/center?label=Version"></a>
     <a href="https://github.com/PryosCode/center/releases"><img alt="Build" src="https://github.com/PryosCode/center/actions/workflows/go.yml/badge.svg"></a>
