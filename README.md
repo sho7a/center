@@ -7,7 +7,7 @@
 
 # center
 
-> A cli tool to center text
+A cli tool to center text
 
 ## Installation
 
