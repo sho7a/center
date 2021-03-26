@@ -15,12 +15,12 @@ func ExecuteCenter(cmd *cobra.Command, args []string) {
 	if piped {
 		scanner := bufio.NewScanner(bufio.NewReader(os.Stdin))
 		for scanner.Scan() {
-			printCenter(scanner.Text())
+			PrintCenter(scanner.Text())
 		}
 	}
 
 	for _, s := range args {
-		printCenter(s)
+		PrintCenter(s)
 	}
 
 	if !piped && len(args) == 0 {
@@ -28,10 +28,10 @@ func ExecuteCenter(cmd *cobra.Command, args []string) {
 	}
 }
 
-func printCenter(c string) {
-	c = strings.ReplaceAll(c, "\r\n", "\n")
-	c = strings.ReplaceAll(c, "\r", "\n")
-	a := strings.Split(c, "\n")
+func PrintCenter(c string) {
+	c = strings.ReplaceAll(c, `\r\n`, `\n`)
+	c = strings.ReplaceAll(c, `\r`, `\n`)
+	a := strings.Split(c, `\n`)
 	for _, s := range a {
 		s = strings.TrimSpace(s)
 		w, _ := GetTerminalSize()

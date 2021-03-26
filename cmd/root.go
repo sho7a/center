@@ -6,7 +6,7 @@ import (
 
 var rootCmd = &cobra.Command{
 	Use:     "center [text]",
-	Version: "0.0.4",
+	Version: "0.0.5",
 	Short:   "A cli tool to center text",
 	Long:    "A cli tool to center text",
 	Run: func(cmd *cobra.Command, args []string) {
