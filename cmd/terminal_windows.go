@@ -34,7 +34,7 @@ var GetTerminalScreenBufferInfoProc = k32.NewProc("GetConsoleScreenBufferInfo")
 
 func GetTerminalSize() (int, int) {
 	h := GetStdHandle(syscall.STD_OUTPUT_HANDLE)
-	i, _ := GetTerminalScreenBufferInfo(h)
+	i := GetTerminalScreenBufferInfo(h)
 	return int(i.Window.Right - i.Window.Left + 1), int(i.Window.Bottom - i.Window.Top + 1)
 }
 
