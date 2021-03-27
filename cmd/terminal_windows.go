@@ -29,22 +29,22 @@ type (
 	}
 )
 
-var k32 = syscall.NewLazyDLL("kernel32.dll")
-var GetTerminalScreenBufferInfoProc = k32.NewProc("GetConsoleScreenBufferInfo")
+var kernel32 = syscall.NewLazyDLL("kernel32.dll")
+var GetTerminalScreenBufferInfoProc = kernel32.NewProc("GetConsoleScreenBufferInfo")
 
 func GetTerminalSize() (int, int) {
-	h := GetStdHandle(syscall.STD_OUTPUT_HANDLE)
-	i := GetTerminalScreenBufferInfo(h)
-	return int(i.Window.Right - i.Window.Left + 1), int(i.Window.Bottom - i.Window.Top + 1)
+	handle := GetStdHandle(syscall.STD_OUTPUT_HANDLE)
+	info := GetTerminalScreenBufferInfo(handle)
+	return int(info.Window.Right - info.Window.Left + 1), int(info.Window.Bottom - info.Window.Top + 1)
 }
 
-func GetStdHandle(stdH int) uintptr {
-	h, _ := syscall.GetStdHandle(stdH)
-	return uintptr(h)
+func GetStdHandle(stdHandle int) uintptr {
+	handle, _ := syscall.GetStdHandle(stdHandle)
+	return uintptr(handle)
 }
 
-func GetTerminalScreenBufferInfo(h uintptr) *terminalScreenBufferInfo {
-	var i terminalScreenBufferInfo
-	GetTerminalScreenBufferInfoProc.Call(h, uintptr(unsafe.Pointer(&i)), 0)
-	return &i
+func GetTerminalScreenBufferInfo(handle uintptr) *terminalScreenBufferInfo {
+	var info terminalScreenBufferInfo
+	GetTerminalScreenBufferInfoProc.Call(handle, uintptr(unsafe.Pointer(&info)), 0)
+	return &info
 }

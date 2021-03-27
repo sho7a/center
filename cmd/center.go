@@ -29,16 +29,10 @@ func ExecuteCenter(cmd *cobra.Command, args []string) {
 }
 
 func PrintCenter(c string) {
-	c = strings.ReplaceAll(c, "\r\n", `\n`)
-	c = strings.ReplaceAll(c, `\r\n`, `\n`)
-	c = strings.ReplaceAll(c, "\r", `\n`)
-	c = strings.ReplaceAll(c, `\r`, `\n`)
-	c = strings.ReplaceAll(c, "\n", `\n`)
-
-	a := strings.Split(c, `\n`)
-	for _, s := range a {
-		s = strings.TrimSpace(s)
-		w, _ := GetTerminalSize()
-		fmt.Println(fmt.Sprintf("%*s", -w, fmt.Sprintf("%*s", (w+len(s))/2, s)))
+	scanner := bufio.NewScanner(strings.NewReader(c))
+	for scanner.Scan() {
+		s := strings.TrimSpace(scanner.Text())
+		width, _ := GetTerminalSize()
+		fmt.Println(fmt.Sprintf("%*s", -width, fmt.Sprintf("%*s", (width+len(s))/2, s)))
 	}
 }

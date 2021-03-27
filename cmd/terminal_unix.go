@@ -7,7 +7,7 @@ import (
 	"unsafe"
 )
 
-var s struct {
+var size struct {
 	rows uint16
 	cols uint16
 	posX uint16
@@ -19,7 +19,7 @@ func GetTerminalSize() (int, int) {
 		syscall.SYS_IOCTL,
 		uintptr(syscall.Stdout),
 		uintptr(syscall.TIOCGWINSZ),
-		uintptr(unsafe.Pointer(&s)),
+		uintptr(unsafe.Pointer(&size)),
 	)
-	return int(s.cols), int(s.rows)
+	return int(size.cols), int(size.rows)
 }

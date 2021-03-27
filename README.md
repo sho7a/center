@@ -37,7 +37,7 @@ _Coming Soon_
 A cli tool to center text
 
 Usage:
-  center [text] [flags]
+  center [text]... [flags]
 
 Flags:
   -h, --help      help for center
@@ -51,15 +51,15 @@ center "This Text is centered"
 ```
 
 ```bash
-center "This Text is centered \n With multiple lines"
+center "This Text is centered" "With multiple lines"
 ```
 
 ```bash
-echo "This Text is centered" | center 
+echo "This Text is centered" | center
 ```
 
 ```bash
-echo "This Text is centered \n With multiple lines" | center 
+echo "This Text is centered \n With multiple lines" | center
 ```
 
 ## License
