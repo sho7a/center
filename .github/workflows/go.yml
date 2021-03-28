@@ -24,12 +24,12 @@ jobs:
         run: |
           go build
           mv center center-linux
-          echo GO_VERSION=$(./center-linux -v | cut -d ' ' -f 3) >> $GITHUB_ENV
+          echo VERSION=$(./center-linux -v | cut -d ' ' -f 3) >> $GITHUB_ENV
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
           files: center-linux
-          tag_name: v${{ env.GO_VERSION }}
+          tag_name: v${{ env.VERSION }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -47,12 +47,12 @@ jobs:
         run: |
           go build
           mv center.exe center-windows.exe
-          echo GO_VERSION=$(./center-windows.exe -v | cut -d ' ' -f 3) | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+          echo VERSION=$(./center-windows.exe -v | cut -d ' ' -f 3) | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
           files: center-windows.exe
-          tag_name: v${{ env.GO_VERSION }}
+          tag_name: v${{ env.VERSION }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -70,11 +70,11 @@ jobs:
         run: |
           go build
           mv center center-macos
-          echo GO_VERSION=$(./center-macos -v | cut -d ' ' -f 3) >> $GITHUB_ENV
+          echo VERSION=$(./center-macos -v | cut -d ' ' -f 3) >> $GITHUB_ENV
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
           files: center-macos
-          tag_name: v${{ env.GO_VERSION }}
+          tag_name: v${{ env.VERSION }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

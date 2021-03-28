@@ -3,9 +3,10 @@ package cmd
 import (
 	"bufio"
 	"fmt"
-	"github.com/spf13/cobra"
 	"os"
 	"strings"
+
+	"github.com/spf13/cobra"
 )
 
 func ExecuteCenter(cmd *cobra.Command, args []string) {
