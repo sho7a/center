@@ -1,8 +1,7 @@
-<a href="#installation"><img align="center" width="100%" alt="neofetch" src="assets/neofetch.png"></a>
+<a href="assets/neofetch.txt"><img align="center" width="100%" alt="neofetch" src="assets/neofetch.png"></a>
 
 <p align="center">
-    <a href="#installation"><img alt="Version" src="https://img.shields.io/github/v/release/PryosCode/center?label=Version"></a>
-    <a href="https://github.com/PryosCode/center/releases"><img alt="Build" src="https://github.com/PryosCode/center/actions/workflows/go.yml/badge.svg"></a>
+    <a href="https://github.com/PryosCode/center/actions"><img alt="Build" src="https://github.com/PryosCode/center/actions/workflows/go.yml/badge.svg"></a>
     <a href="https://github.com/PryosCode/center/blob/master/LICENSE"><img alt="License" src="https://img.shields.io/github/license/PryosCode/center?label=License"></a>
     <a href="https://discord.gg/bF2GRHq"><img alt="Discord" src="https://discord.com/api/guilds/350302354639290379/widget.png"></a>
 </p>
@@ -11,25 +10,9 @@
 
 A cli tool to center text
 
-## Installation
+## Download
 
-### Linux
-
-#### Arch
-_Coming Soon_
-
-#### Ubuntu (Debian)
-_Coming Soon_
-
-### Windows
-
-#### Chocolatey
-_Coming Soon_
-
-### MacOS
-
-#### Homebrew
-_Coming Soon_
+![Version](https://img.shields.io/github/v/release/PryosCode/center?label=Version)
 
 ## Usage
 
