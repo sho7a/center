@@ -12,7 +12,7 @@ A cli tool to center text
 
 ## Download
 
-![Version](https://img.shields.io/github/v/release/PryosCode/center?label=Version)
+[![Version](https://img.shields.io/github/v/release/PryosCode/center?label=Version)](https://github.com/PryosCode/center/releases)
 
 ## Usage
 
