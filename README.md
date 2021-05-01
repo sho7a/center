@@ -17,8 +17,6 @@ A cli tool to center text
 ## Usage
 
 ```bash
-A cli tool to center text
-
 Usage:
   center [text]... [flags]
 
