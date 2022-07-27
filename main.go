@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/PryosCode/center/cmd"
+	"github.com/sho7a/center/cmd"
 )
 
 func main() {
