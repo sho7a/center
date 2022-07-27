@@ -1,4 +1,4 @@
-module github.com/PryosCode/center
+module github.com/sho7a/center
 
 go 1.16
 
