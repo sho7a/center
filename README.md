@@ -15,7 +15,7 @@ A cli tool to center text.
 ## Installation
 
 ```bash
-$ go install https://github.com/sho7a/center@latest
+$ go install github.com/sho7a/center@latest
 ```
 
 ## Download
