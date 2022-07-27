@@ -12,6 +12,12 @@
 
 A cli tool to center text.
 
+## Installation
+
+```bash
+$ go install https://github.com/sho7a/center@latest
+```
+
 ## Download
 
 [Releases](https://github.com/PryosCode/center/releases)
