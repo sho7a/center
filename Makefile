@@ -16,7 +16,7 @@ bin/center:
 
 clean:
 ifeq ($(OS), Windows_NT)
-		if exists bin ( rmdir /s /q bin )
+	if exist bin ( rmdir /s /q bin )
 else
-		if [ -d bin ]; then rm -r bin; fi
+	if [ -d bin ]; then rm -r bin; fi
 endif
