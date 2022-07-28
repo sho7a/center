@@ -9,6 +9,12 @@ void printc(char *text, int width) {
 }
 
 int main(int argc, char *argv[])  {
+    if (argc == 1) {
+        printf("USAGE:\n");
+        printf("    %s <TEXT>...\n", argv[0]);
+        return 0;
+    }
+
     #ifdef _WIN32
         CONSOLE_SCREEN_BUFFER_INFO csbi;
         GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
