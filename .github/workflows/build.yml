@@ -12,13 +12,11 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Build
-        run: |
-          make
-          echo VERSION=$(./center -v | cut -d ' ' -f 3) >> $GITHUB_ENV
+        run: make
 
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: v${{ env.VERSION }}
+          tag_name: v2.0.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
