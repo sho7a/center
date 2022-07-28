@@ -12,7 +12,7 @@ A cli tool to center text.
 
 ```bash
 USAGE:
-    center.exe <TEXT>...
+    center <TEXT>...
 ```
 
 ## Build
