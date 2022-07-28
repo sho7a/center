@@ -11,7 +11,7 @@ int main(int argc, char *argv[])  {
     if (argc == 1) {
         printf("USAGE:\n");
         printf("    %s <TEXT>...\n", argv[0]);
-        return 0;
+        return 1;
     }
 
     int width;
