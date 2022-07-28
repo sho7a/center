@@ -1,12 +1,11 @@
 #include <stdio.h>
+#include <string.h>
 
 #ifdef _WIN32
 #include <Windows.h>
+#else
+#include <sys/ioctl.h>
 #endif
-
-void printc(char *text, int width) {
-    printf("%*s\n", (width + strlen(text)) / 2, text);
-}
 
 int main(int argc, char *argv[])  {
     if (argc == 1) {
@@ -15,13 +14,21 @@ int main(int argc, char *argv[])  {
         return 0;
     }
 
+    int width;
+
     #ifdef _WIN32
         CONSOLE_SCREEN_BUFFER_INFO csbi;
         GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
-        int width = csbi.srWindow.Right - csbi.srWindow.Left + 1;
-        for (int i = 1; i < argc; ++i) {
-            printc(argv[i], width);
-        }
+        width = csbi.srWindow.Right - csbi.srWindow.Left + 1;
+    #else
+        struct winsize ws;
+        ioctl(0, TIOCGWINSZ, &ws);
+        width = ws.ws_col;
     #endif
+
+    for (int i = 1; i < argc; ++i) {
+        printf("%*s\n", (int) ((width + strlen(argv[i])) / 2), argv[i]);
+    }
+
     return 0;
 }
