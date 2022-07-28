@@ -5,7 +5,7 @@
 #endif
 
 void printc(char *text, int width) {
-    printf("%*s", -width, printf("%*s", (width + strlen(text)) / 2, text));
+    printf("%*s\n", (width + strlen(text)) / 2, text);
 }
 
 int main(int argc, char *argv[])  {
